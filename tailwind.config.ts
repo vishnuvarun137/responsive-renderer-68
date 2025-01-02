@@ -52,7 +52,6 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom colors as per design
         "soft-blue": "#F5F8FF",
         "soft-pink": "#FFE6F1",
         "soft-purple": "#F3E6FF",

@@ -1,6 +1,8 @@
 import React from 'react';
 import Layout from '@/components/Layout';
 import StatsCard from '@/components/StatsCard';
+import { PinIcon } from 'lucide-react';
+import Logo from '@/components/Logo';
 
 const Index = () => {
   return (
@@ -39,6 +41,7 @@ const Index = () => {
               { label: "Men", value: 120 },
               { label: "Women", value: 96 },
             ]}
+            showGraph={true}
             className="bg-white shadow-sm"
           />
           <StatsCard
@@ -50,6 +53,7 @@ const Index = () => {
               { label: "Men", value: 6 },
               { label: "Women", value: 10 },
             ]}
+            showGraph={true}
             className="bg-white shadow-sm"
           />
         </div>
@@ -67,22 +71,28 @@ const Index = () => {
                   {
                     title: "Outing schedule for every department",
                     time: "5 Minutes ago",
+                    pinned: true,
                   },
                   {
                     title: "Meeting HR Department",
                     time: "Yesterday, 12:30 PM",
+                    pinned: false,
                   },
                   {
                     title: "IT Department needs two more talents for UX/UI Designer position",
                     time: "Yesterday, 09:15 AM",
+                    pinned: false,
                   },
                 ].map((announcement) => (
                   <div
                     key={announcement.title}
-                    className="p-4 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer"
+                    className="p-4 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer flex gap-3"
                   >
-                    <h3 className="font-medium text-[#1A1D1F]">{announcement.title}</h3>
-                    <p className="text-sm text-[#6F767E] mt-1">{announcement.time}</p>
+                    <PinIcon className={`h-5 w-5 mt-1 flex-shrink-0 ${announcement.pinned ? "text-accent-red" : "text-gray-300"}`} />
+                    <div>
+                      <h3 className="font-medium text-[#1A1D1F]">{announcement.title}</h3>
+                      <p className="text-sm text-[#6F767E] mt-1">{announcement.time}</p>
+                    </div>
                   </div>
                 ))}
               </div>

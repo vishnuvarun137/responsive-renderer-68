@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { Area, AreaChart, ResponsiveContainer } from 'recharts';
 
 interface StatsCardProps {
   title: string;
@@ -14,6 +15,7 @@ interface StatsCardProps {
     label: string;
     value: number;
   }[];
+  showGraph?: boolean;
 }
 
 const StatsCard: React.FC<StatsCardProps> = ({
@@ -23,7 +25,18 @@ const StatsCard: React.FC<StatsCardProps> = ({
   className,
   trend,
   details,
+  showGraph = false,
 }) => {
+  const data = [
+    { value: 30 },
+    { value: 40 },
+    { value: 35 },
+    { value: 50 },
+    { value: 45 },
+    { value: 60 },
+    { value: 55 },
+  ];
+
   return (
     <div 
       className={cn(
@@ -48,6 +61,22 @@ const StatsCard: React.FC<StatsCardProps> = ({
           </div>
         )}
       </div>
+      
+      {showGraph && (
+        <div className="h-16 mt-4">
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart data={data}>
+              <Area
+                type="monotone"
+                dataKey="value"
+                stroke="#FF5151"
+                fill="#FFE6E6"
+                strokeWidth={2}
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
+      )}
       
       {details && (
         <div className="mt-6 space-y-3">
