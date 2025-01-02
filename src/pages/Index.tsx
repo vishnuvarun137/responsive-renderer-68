@@ -6,7 +6,7 @@ const Index = () => {
   return (
     <Layout>
       <div className="space-y-6 animate-fade-in">
-        <h1 className="text-2xl font-semibold text-gray-900">Dashboard</h1>
+        <h1 className="text-3xl font-bold text-[#1A1D1F]">Dashboard</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <StatsCard
@@ -41,10 +41,10 @@ const Index = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-6">
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <div className="bg-white rounded-[20px] shadow-sm p-6">
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-lg font-semibold">Announcement</h2>
-                <button className="text-sm text-primary">See All</button>
+                <h2 className="text-xl font-semibold text-[#1A1D1F]">Announcement</h2>
+                <button className="text-sm text-accent-blue font-medium">See All</button>
               </div>
               
               <div className="space-y-4">
@@ -66,8 +66,8 @@ const Index = () => {
                     key={announcement.title}
                     className="p-4 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer"
                   >
-                    <h3 className="font-medium text-gray-900">{announcement.title}</h3>
-                    <p className="text-sm text-gray-500 mt-1">{announcement.time}</p>
+                    <h3 className="font-medium text-[#1A1D1F]">{announcement.title}</h3>
+                    <p className="text-sm text-[#6F767E] mt-1">{announcement.time}</p>
                   </div>
                 ))}
               </div>
@@ -75,7 +75,7 @@ const Index = () => {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-[#14183E] text-white rounded-xl p-6">
+            <div className="bg-navy-blue text-white rounded-[20px] p-6">
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-lg font-semibold">Recently Activity</h2>
                 <span className="text-sm opacity-60">10.40 AM, Fri 10 Sept 2021</span>
@@ -94,10 +94,10 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-xl border border-gray-200 p-6">
+            <div className="bg-white rounded-[20px] shadow-sm p-6">
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-lg font-semibold">Upcoming Schedule</h2>
-                <button className="text-sm text-primary">Create</button>
+                <h2 className="text-xl font-semibold text-[#1A1D1F]">Upcoming Schedule</h2>
+                <button className="text-sm text-accent-blue font-medium">Create</button>
               </div>
               
               <div className="space-y-4">
@@ -121,11 +121,11 @@ const Index = () => {
                     className="flex items-start gap-4 p-4 rounded-lg border border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer"
                   >
                     <div className="flex-1">
-                      <h3 className="font-medium text-gray-900">{schedule.title}</h3>
-                      <p className="text-sm text-gray-500 mt-1">{schedule.time}</p>
+                      <h3 className="font-medium text-[#1A1D1F]">{schedule.title}</h3>
+                      <p className="text-sm text-[#6F767E] mt-1">{schedule.time}</p>
                     </div>
                     {schedule.priority && (
-                      <span className="px-2 py-1 bg-red-100 text-red-600 text-xs rounded-full">
+                      <span className="px-2 py-1 bg-red-100 text-accent-red text-xs rounded-full font-medium">
                         Priority
                       </span>
                     )}
