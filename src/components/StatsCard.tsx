@@ -27,27 +27,34 @@ const StatsCard: React.FC<StatsCardProps> = ({
   return (
     <div 
       className={cn(
-        "p-6 rounded-[20px] bg-white shadow-sm transition-all hover:shadow-md", 
+        "p-8 rounded-[20px] bg-white transition-all", 
         className
       )}
     >
-      <h3 className="text-lg font-medium text-[#1A1D1F]">{title}</h3>
-      <div className="mt-2 flex items-baseline gap-2">
-        <span className="text-4xl font-bold text-[#1A1D1F]">{value}</span>
+      <h3 className="text-2xl font-semibold text-navy-blue mb-6">{title}</h3>
+      <div className="flex items-start gap-4">
+        <div className="flex-1">
+          <span className="text-[56px] leading-none font-bold text-navy-blue block mb-3">{value}</span>
+          <p className="text-lg text-accent-red">{subtitle}</p>
+        </div>
         {trend && (
-          <span className="text-sm text-green-500 font-medium">
-            {trend.value} {trend.label}
-          </span>
+          <div className="flex flex-col items-end">
+            <span className="text-accent-red text-lg font-medium">
+              {trend.value}
+            </span>
+            <span className="text-sm text-text-secondary mt-1">
+              {trend.label}
+            </span>
+          </div>
         )}
       </div>
-      <p className="text-sm text-[#6F767E] mt-1">{subtitle}</p>
       
       {details && (
-        <div className="mt-4 space-y-2">
+        <div className="mt-6 space-y-3">
           {details.map((detail) => (
-            <div key={detail.label} className="flex justify-between text-sm">
-              <span className="text-[#6F767E]">{detail.label}</span>
-              <span className="font-medium text-[#1A1D1F]">{detail.value}</span>
+            <div key={detail.label} className="flex justify-between text-lg">
+              <span className="text-text-secondary">{detail.label}</span>
+              <span className="font-medium text-navy-blue">{detail.value}</span>
             </div>
           ))}
         </div>

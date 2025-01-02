@@ -6,27 +6,30 @@ const Index = () => {
   return (
     <Layout>
       <div className="space-y-6 animate-fade-in">
-        <h1 className="text-3xl font-bold text-[#1A1D1F]">Dashboard</h1>
+        <h1 className="text-3xl font-bold text-navy-blue">Dashboard</h1>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <StatsCard
             title="Available Position"
             value="24"
             subtitle="4 Urgently needed"
-            className="bg-soft-pink/20"
+            className="bg-soft-pink"
           />
           <StatsCard
             title="Job Open"
             value="10"
             subtitle="4 Active hiring"
-            className="bg-soft-blue/20"
+            className="bg-soft-blue"
           />
           <StatsCard
             title="New Employees"
             value="24"
             subtitle="4 Department"
-            className="bg-soft-purple/20"
+            className="bg-soft-purple"
           />
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <StatsCard
             title="Total Employees"
             value="216"
@@ -36,6 +39,18 @@ const Index = () => {
               { label: "Men", value: 120 },
               { label: "Women", value: 96 },
             ]}
+            className="bg-white shadow-sm"
+          />
+          <StatsCard
+            title="Talent Request"
+            value="16"
+            subtitle="6 Men"
+            trend={{ value: "+5%", label: "Past month" }}
+            details={[
+              { label: "Men", value: 6 },
+              { label: "Women", value: 10 },
+            ]}
+            className="bg-white shadow-sm"
           />
         </div>
 
